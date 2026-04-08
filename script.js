@@ -3,64 +3,158 @@ document.title = gameName;
 document.querySelector("h1").textContent = gameName;
 document.querySelector("footer").textContent = `${gameName} had made by martin michel`;
 
-
 const wordsByLength = {
-  3: [
-    "eat","pet","sun","cat","dog","hat","pen","box","car","run",
-    "map","bed","cup","toy","key","ice","bat","fan","egg","log",
-    "cow","pig","ant","bee","owl","fox","zip","jam","net","rod",
-    "sky","sea","ink","lid","pot","rug","sip","tap","van","wet",
-    "yak","zen","bud","dew","fig","gum","hut","jet","kit","lap"
-  ],
-  4: [
-    "book","tree","lamp","fish","door","milk","road","wind","star","fire",
-    "moon","ship","ring","farm","hill","rock","rain","snow","leaf","sand",
-    "coin","desk","bell","card","game","note","wave","ship","bowl","seed",
-    "coat","boot","mask","belt","wire","dust","clay","drum","flag","gold",
-    "iron","jade","lime","mint","navy","opal","pearl","ruby","silk","wool"
-  ],
-  5: [
-    "apple","table","chair","bread","water","plant","light","stone","smile","train",
-    "grape","beach","cloud","river","sweet","spice","sugar","honey","dream","sound",
-    "color","shape","flame","brick","steel","glass","clock","radio","phone","watch",
-    "shirt","pants","shoes","socks","brush","cream","paste","towel","sheet","cover",
-    "candy","juice","lemon","mango","olive","peach","berry","melon","onion","garlic"
-  ],
-  6: [
-    "banana","laptop","pillow","carpet","bottle","flower","window","orange","silver","market",
-    "forest","desert","island","valley","stream","bridge","castle","garden","school","office",
-    "energy","system","device","screen","camera","sensor","engine","rocket","planet","author",
-    "writer","artist","singer","doctor","lawyer","driver","farmer","baker","butter","cheese",
-    "yogurt","coffee","syrup","sauce","noodle","cookie","cereal","closet","zipper","mirror"
-  ],
-  7: [
-    "teacher","student","country","picture","morning","freedom","journey","library","science","fashion",
-    "weather","culture","history","digital","network","program","project","support","battery","charger",
-    "speaker","display","printer","scanner","desktop","storage","adapter","airport","station","highway",
-    "railway","traffic","vehicle","bicycle","scooter","airline","grocery","kitchen","bedroom","bathroom",
-    "balcony","ceiling","curtain","blanket","cabinet","dresser","protect","chapter","explore","imagine"
-  ],
-  8: [
-    "elephant","computer","building","mountain","painting","language","medicine","internet","sunshine","baseball",
-    "football","airplane","notebook","keyboard","software","hardware","database","security","analysis","strategy",
-    "training","learning","teaching","research","feedback","planning","thinking","solution","decision","approach",
-    "vacation","festival","ceremony","birthday","wedding","holiday","firework","concert","hospital","pharmacy",
-    "therapy","surgery","patient","medical","treatment","recovery","organize","complete","describe","standard"
-  ],
-  9: [
-    "education","beautiful","chocolate","newspaper","adventure","wonderful","knowledge","important","happiness","direction",
-    "character","framework","component","interface","algorithm","structure","operation","developer","designer","engineer",
-    "marketing","promotion","branding","strategy","campaign","audience","customer","business","commerce","industry",
-    "inventory","shipping","delivery","tracking","purchase","checkout","discount","feedback","services","products",
-    "vacations","locations","mountains","waterfall","landscape","sunflower","blueberry","pineapple","strawcake","cherries"
-  ],
-  10: [
-    "basketball","everything","friendship","helicopter","understand","strawberry","environment","background","foundation","motivation",
-    "technology","development","programming","application","integration","automation","innovation","management","leadership","communication",
-    "information","generation","processing","connection","experience","improvement","efficiency","performance","optimization","evaluation",
-    "transported","celebration","imagination","production","inspection","navigation","calculation","comparison","distribution","expansion",
-    "population","government","department","university","laboratory","engineering","architecture","investment","managements","operations"
-  ]
+  3: {
+    animals:   ["ant","bat","bee","cat","cod","cow","dog","elk","emu","fox"],
+    nature:    ["dew","elm","fog","ice","ivy","mud","oak","sea","sky","sun"],
+    verbs:     ["cut","dig","eat","fly","get","hit","hop","put","run","sit"],
+    objects:   ["bag","bed","box","cup","fan","hat","key","log","map","pen"],
+    food:      ["bun","egg","fig","ham","jam","nut","oat","pie","rye","yam"],
+    colors:    ["red","tan","teal","nav","mar","blu","yel","gry","blk","wht"],
+    jobs:      ["cop","doc","vet","chef","far","law","act","bar","dev","eng"],
+    tech:      ["cpu","ram","rom","usb","lan","wan","app","web","bot","net"],
+    clothes:   ["cap","hat","tie","fur","zip","hem","rag","saw","coat","wig"],
+    emotions:  ["joy","sad","mad","cal","shy","ten","zen","wow","ugh","yay"],
+    body:      ["eye","ear","leg","arm","toe","lip","jaw","rib","hip","gum"],
+    transport: ["bus","car","van","jet","sub","cab","tax","suv","rig","van"],
+    places:    ["sea","bay","inn","bar","gym","spa","lab","zoo","hut","dam"],
+    tools:     ["saw","axe","hoe","awl","peg","rod","bit","tap","die","fix"],
+    games:     ["tag","uno","ludo","goe","war","bid","set","run","hit","aim"]
+  },
+
+
+  4: {
+    fruits:    ["acai","date","kiwi","lime","noni","pear","plum","sloe","ugli","yuzu"],
+    countries: ["chad","cuba","fiji","iran","iraq","laos","mali","oman","peru","togo"],
+    animals:   ["bear","boar","crab","deer","duck","frog","mole","toad","wolf","wren"],
+    sports:    ["dive","golf","judo","kick","luge","polo","race","surf","swim","trek"],
+    objects:   ["bell","book","bowl","card","coin","desk","door","drum","flag","lamp"],
+    colors:    ["blue","cyan","gold","gray","lime","navy","pink","teal","aqua","beig"],
+    jobs:      ["chef","clrk","docu","engi","farm","guard","nurs","pilot","sail","tech"],
+    tech:      ["code","data","file","link","node","host","user","root","hash","port"],
+    clothes:   ["coat","jean","mask","robe","sock","suit","vest","belt","boot","glov"],
+    emotions:  ["calm","fear","hope","love","hate","envy","prid","sham","joys","grin"],
+    body:      ["head","hand","foot","back","neck","nose","skin","bone","lung","vein"],
+    transport: ["bike","boat","bus ","car ","jeep","taxi","tram","ship","uber","rail"],
+    places:    ["city","town","park","mall","cafe","bank","farm","port","camp","yard"],
+    tools:     ["dril","hamr","screw","plier","wren","saw ","file","vice","tool","gear"],
+    games:     ["chess","ludo","poker","golf","pool","dart","quiz","race","card","dice"]
+  },
+
+
+  5: {
+    fruits:    ["apple","berry","dates","grape","guava","lemon","mango","melon","olive","peach"],
+    countries: ["china","egypt","ghana","india","italy","japan","kenya","libya","nepal","qatar"],
+    animals:   ["camel","cobra","eagle","horse","koala","panda","shark","tiger","viper","zebra"],
+    sports:    ["canoe","chess","darts","joust","kayak","relay","rodeo","rugby","skate","vault"],
+    colors:    ["beige","black","brown","coral","cream","green","ivory","khaki","lilac","white"],
+    jobs:      ["actor","baker","clerk","dancer","pilot","nurse","guard","judge","miner","racer"],
+    tech:      ["array","cache","cloud","debug","input","logic","pixel","query","stack","token"],
+    clothes:   ["shirt","pants","dress","jeans","skirt","socks","boots","scarf","glove","sweat"],
+    emotions:  ["happy","angry","scary","proud","brave","calms","sadly","eager","tired","worst"],
+    body:      ["brain","heart","lungs","teeth","mouth","spine","blood","nerve","wrist","ankle"],
+    transport: ["truck","train","plane","ferry","metro","cycle","scoot","taxic","cable","rides"],
+    places:    ["hotel","house","beach","park ","store","cafe ","plaza","court","field","tower"],
+    tools:     ["drill","screw","knife","plier","wrench","hammer","level","chisel","blade","torch"],
+    games:     ["chess","cards","poker","bingo","ludo ","draft","guess","match","throw","score"],
+    verbs:     ["build","catch","drive","fight","learn","teach","write","watch","break","bring"]
+  },
+
+
+  6: {
+    fruits:    ["banana","cherry","durian","feijoa","lychee","medlar","orange","papaya","pomelo","quince"],
+    countries: ["brazil","canada","france","greece","israel","jordan","kuwait","mexico","norway","poland"],
+    animals:   ["donkey","jaguar","lizard","monkey","oyster","parrot","rabbit","salmon","toucan","turtle"],
+    sports:    ["boxing","diving","hockey","karate","racing","rowing","skiing","soccer","squash","tennis"],
+    colors:    ["bisque","bronze","cobalt","golden","indigo","maroon","purple","silver","violet","yellow"],
+    jobs:      ["doctor","farmer","lawyer","singer","driver","writer","artist","chef  ","dancer","editor"],
+    tech:      ["binary","server","router","system","client","backup","script","kernel","python","docker"],
+    clothes:   ["jacket","hoodie","sweat","blouse","trouser","uniform","pajama","tshirt","shorts","jersey"],
+    emotions:  ["afraid","excited","joyful","lonely","nervou","stress","relief","shamed","prouds","lovely"],
+    body:      ["muscle","finger","kidney","tongue","throat","should","breast","artery","pelvis","retina"],
+    transport: ["subway","taxies","bicycle","scooter","rocket","airbus","pickup","minibus","sailer","glider"],
+    places:    ["school","market","office","garden","museum","cinema","stadium","temple","island","desert"],
+    tools:     ["hammer","sawyer","drills","cutter","pliers","wrench","sander","grinder","lathe ","router"],
+    games:     ["soccer","tennis","hockey","racing","boxing","karate","skiing","chessy","puzzle","arcade"],
+    verbs:     ["create","follow","change","accept","refuse","travel","return","search","choose","expand"]
+  },
+
+
+  7: {
+    fruits:    ["apricot","avocado","coconut","currant","kumquat","passion","rhubarb","satsuma","soursop","tangelo"],
+    countries: ["albania","algeria","andorra","armenia","austria","bahrain","belarus","bolivia","croatia","denmark"],
+    animals:   ["buffalo","dolphin","gorilla","hamster","leopard","lobster","panther","penguin","sparrow","vulture"],
+    sports:    ["archery","cricket","cycling","fencing","hurdles","javelin","jogging","sailing","surfing","walking"],
+    colors:    ["crimson","emerald","scarlet","mustard","charcol","offwhite","burgund","lavende","seafoam","coralys"],
+    jobs:      ["teacher","painter","builder","manager","analyst","designer","farrier","dentist","chemist","pilotss"],
+    tech:      ["network","backend","frontend","storage","virtual","cluster","firewall","gateway","browser","hosting"],
+    clothes:   ["blazer ","uniform","trench ","kimono ","cardiga","legging","raincoa","overcoa","sweater","jerseys"],
+    emotions:  ["anxious","excited","fearful","hopeful","joyfuls","nervous","stresse","worried","calmest","thrills"],
+    body:      ["stomach","forearm","eyebrow","eyelash","ankle  ","shouldr","bladder","thyroid","skull  ","tongues"],
+    transport: ["airline","railway","subways","tramway","airport","harbour","highway","seaport","station","runways"],
+    places:    ["library","airport","college","factory","village","theatre","gallery","parkway","stadium","hostels"],
+    tools:     ["toolkit","driller","sawblade","cutters","wrenchs","sanders","grinder","planers","lathe  ","routers"],
+    games:     ["cricket","basebal","football","handbal","softbal","bowling","cycling","fencing","surfing","skating"],
+    verbs:     ["running","writing","reading","playing","driving","working","helping","talking","walking","calling"]
+  },
+
+
+  8: {
+    fruits:    ["bergamot","bilberry","dewberry","mandarin","mulberry","physalis","plantain","rambutan","rosehips","tamarind"],
+    countries: ["cambodia","cameroon","colombia","djibouti","dominica","ethiopia","honduras","kiribati","malaysia","mongolia"],
+    animals:   ["aardvark","anaconda","anteater","antelope","barnacle","bluebird","cardinal","chipmunk","flamingo","hedgehog"],
+    sports:    ["biathlon","canoeing","climbing","football","handball","lacrosse","marathon","shooting","softball","swimming"],
+    colors:    ["absolute","abstract","accurate","advanced","affluent","balanced","colorful","colorway","gradient","metallic"],
+    jobs:      ["engineer","designer","director","producer","archtect","scientst","lecturer","operator","plumberr","carpentr"],
+    tech:      ["database","software","hardware","protocol","internet","compiler","debugger","firewall","terminal","keyboard"],
+    clothes:   ["jacketss","trousers","cardigan","raincoat","overcoat","swimsuit","tuxedoes","wardrobe","uniforms","costumes"],
+    emotions:  ["happiness","sadnesss","angriness","excitemnt","fearless","hopefull","jealousy","kindness","lonelines","nervousl"],
+    body:      ["skeleton","shoulder","forehead","backbone","kneecaps","ligament","cartilag","muscular","arteries","organsss"],
+    transport: ["airplane","railroad","seaships","tramways","highways","airports","harbours","runwayss","seaports","vehicles"],
+    places:    ["hospital","university","cafeteria","workshop","bookshop","theaters","stadiums","galleries","offices ","museums"],
+    tools:     ["drillers","grinders","cuttings","toolkits","machines","hardware","software","devices ","gearsets","fixtures"],
+    games:     ["football","baseball","handball","softball","crickety","bowlingg","shooting","climbing","swimming","cyclingg"],
+    verbs:     ["creating","learning","teaching","building","drivingg","workingg","helpingg","callingg","readingg","writingg"]
+  },
+
+
+  9: {
+    fruits:    ["blueberry","cranberry","pineapple","raspberry","nectarine","persimmon","starfruit","mulberrie","blackcurr","boysenber"],
+    countries: ["argentina","australia","indonesia","singapore","venezuela","guatemala","lithuania","nicaragua","slovakiaa","hungaryyy"],
+    animals:   ["alligator","crocodile","butterfly","dragonfly","porcupine","wolverine","greyhound","armadillo","kangaroos","elephants"],
+    sports:    ["athletics","badminton","motocross","taekwondo","waterpolo","wrestling","gymnasium","freestyle","snowboard","kickboxing"],
+    colors:    ["turquoise","chocolate","goldenrod","slategray","royalblue","darkgreen","lightblue","crimsonnn","lavenderr","seagreen"],
+    jobs:      ["developer","architect","scientist","mechanic","electricn","plumberrr","designerx","engineerr","operatorr","technicia"],
+    tech:      ["algorithm","framework","interface","processor","bandwidth","cybersecu","debugging","rendering","streaming","protocols"],
+    clothes:   ["overcoats","sweatpant","jacketsss","uniformss","cardigans","raincoats","wardrobes","swimsuits","costumess","tuxedoesx"],
+    emotions:  ["happiness","sadnesses","fearfully","nervously","angriness","excitingly","hopefully","jealousyy","kindnesss","lonelines"],
+    body:      ["heartbeat","shoulders","foreheads","backbones","kneecapss","ligaments","cartilage","musculars","arteriess","organssss"],
+    transport: ["airplanes","railroads","seashipss","tramwayyy","highwayyy","airportss","harbourss","runwayyyy","seaportss","vehiclesx"],
+    places:    ["hospitals","universit","cafeteriaa","workshops","bookshops","theatress","stadiumss","galleriess","officesss","museumsss"],
+    tools:     ["drillings","grindings","cuttinggg","toolkitss","machinesx","hardwarex","softwarex","devicesxx","gearsetss","fixturesx"],
+    games:     ["footballl","baseballl","handballl","softballl","crickettt","bowlinggg","shootingg","climbingg","swimmingg","cyclinggg"],
+    verbs:     ["developing","searching","returning","choosingg","creatingg","learningg","teachingg","buildingg","drivinggg","workinggg"]
+  },
+
+
+  10: {
+    fruits:    ["strawberry","watermelon","blackberry","grapefruit","mangosteen","elderberry","gooseberry","cloudberry","loganberry","breadfruit"],
+    countries: ["azerbaijan","bangladesh","kyrgyzstan","luxembourg","madagascar","mozambique","tajikistan","uzbekistan","afghanistan","switzerland"],
+    animals:   ["chimpanzee","roadrunner","woodpecker","salamander","copperhead","chinchilla","anglerfish","bluebottle","grasshopper","rattlesnake"],
+    sports:    ["basketball","volleyball","gymnastics","skateboard","equestrian","dragonboat","cyclocross","paddleball","kettlebell","rappelling"],
+    colors:    ["lightgreen","darkviolet","skyblueeee","deepyellow","brightredd","orangetone","softpurple","palegolden","darkorange","lightcoral"],
+    jobs:      ["programmer","electrician","mechanical","technician","accountant","consultant","supervisor","researcher","translatorr","journalist"],
+    tech:      ["javascript","typescript","deployment","encryption","automation","databasesx","networking","cybersecur","processing","virtualiza"],
+    clothes:   ["sweatshirt","tracksuits","jacketsxxx","uniformxxxx","cardiganxx","raincoatsx","overcoatss","swimsuitss","wardrobess","costumesss"],
+    emotions:  ["happinesss","sadnesssss","excitement","nervousness","fearlessness","hopefulness","jealousness","kindnessss","lonelinesss","angerlevel"],
+    body:      ["circulatory","respirator","digestivee","skeletalls","muscularsy","nervoussys","endocrinee","reproductiv","integument","lymphaticc"],
+    transport: ["helicopter","motorcycle","submarines","spaceships","aircraftss","locomotive","hovercraft","jetlinerss","railwayyyy","tramwaysss"],
+    places:    ["restaurant","universityy","hospitalss","government","department","laboratory","playground","stadiumsss","bookstoree","supermarke"],
+    tools:     ["machineryy","equipmentss","instrument","apparatusss","gearboxesx","workshopsx","toolkitsxxx","hardwaress","softwaress","devicesxxx"],
+    games:     ["basketball","volleyball","gymnastics","skateboard","tabletennis","badmintonn","footballlll","handballll","softballll","cricketttt"],
+    verbs:     ["developing","processing","generating","calculating","designingg","constructi","implementi","optimizing","analyzingg","debuggingg"]
+  }
+
 };
 
 trysCounter = 1;
@@ -68,19 +162,22 @@ const numberTrys = 6;
 const allInputsValue = document.querySelectorAll(`.inputs-row-${trysCounter} input`);
 inputLinkedWord = [];
 randomItem = '';
-
+typeSelectorValue= ''
 localStorage.setItem("score", localStorage.getItem("score") || 0);
 
 let scoreP = document.querySelector(".score p");
 scoreP.textContent = `your score is : ${localStorage.getItem("score")}`;
 
-let inputNumLetters = document.querySelector("div.num-letters select");
+let inputNumLetters = document.querySelector("div.num-letters #numbers");
+
+let inputTypeWord = document.querySelector("div.num-letters #type");
 
 const all = document.createElement("div");
 all.classList.add("all");
 document.querySelector(".trys-inputs").prepend(all);
 
 inputNumLetters.value = "";
+inputTypeWord.value = "";
 
 document.querySelector(".check").disabled = true;
 document.querySelector(".check").style.cursor = 'none';
@@ -295,6 +392,14 @@ function removeAllForMessage() {
   document.querySelector('body footer').style.opacity = '0.3';
 }
 
+inputNumLetters.disabled = true;
+
+inputTypeWord.addEventListener("input", function () {
+  inputTypeWord.disabled = true;
+  inputNumLetters.disabled = false;
+  typeSelectorValue= inputTypeWord.value;
+});
+
 
 inputNumLetters.addEventListener("input", function () {
   document.querySelector(".check").disabled = false;
@@ -304,9 +409,11 @@ inputNumLetters.addEventListener("input", function () {
 
   inputNumLetters.disabled = true;
 
-  const randomIndex = Math.floor(Math.random() * wordsByLength[inputNumLetters.value].length);
-  randomItem = wordsByLength[inputNumLetters.value][+randomIndex];
+  const randomIndex = Math.floor(Math.random()
+  *wordsByLength[inputNumLetters.value][typeSelectorValue].length);
+  randomItem = wordsByLength[inputNumLetters.value][typeSelectorValue][+randomIndex];
   creatingInputs(randomItem);
+  console.log(randomItem)
 });
 
 document.querySelector(".check").addEventListener("click", function () {
