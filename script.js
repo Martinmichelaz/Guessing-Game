@@ -3,8 +3,6 @@ document.title = gameName;
 document.querySelector("h1").textContent = gameName;
 document.querySelector("footer").textContent = `${gameName} had made by martin michel`;
 
-let numberHints = 1;
-document.querySelector(".hints").textContent = `${numberHints} hints`;
 
 const wordsByLength = {
   3: [
@@ -72,6 +70,7 @@ inputLinkedWord = [];
 randomItem = '';
 
 localStorage.setItem("score", localStorage.getItem("score") || 0);
+
 let scoreP = document.querySelector(".score p");
 scoreP.textContent = `your score is : ${localStorage.getItem("score")}`;
 
@@ -88,7 +87,6 @@ document.querySelector(".check").style.cursor = 'none';
 document.querySelector(".hints").disabled = true;
 document.querySelector(".hints").style.cursor = 'none';
 
-// ===== CREATE INPUTS =====
 function creatingInputs(randomItem) {
   const inputsRow = document.createElement("div");
   inputsRow.classList.add("inputs-row");
@@ -135,7 +133,7 @@ function creatingInputs(randomItem) {
   document.querySelector(`.inputs-row-${trysCounter}
 	input:nth-child(1)`).focus();
 
-	numberHins(randomItem)
+	numberHintsFunction(randomItem);
 }
 
 function valuesInputsAndCheck(gameWord) {
@@ -168,14 +166,14 @@ function valuesInputsAndCheck(gameWord) {
   trysCounter += 1;
 }
 
-function numberHin(gameWord){
+function numberHintsFunction(gameWord){
 	if(gameWord.length >= 6 && gameWord.length < 10 ){
-	 numberHints=2
-	}else if(gameWord.length == 10){
-		numberHints=3
+	 numberHints=2;
+	}else if(gameWord.length === 10){
+		numberHints=3;
 	}
 	else{
-	 numberHints=1
+	 numberHints=1;
 	}
 	document.querySelector(".hints").textContent=`${numberHints} hints`;
 }
