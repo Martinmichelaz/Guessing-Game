@@ -413,7 +413,6 @@ inputNumLetters.addEventListener("input", function () {
   *wordsByLength[inputNumLetters.value][typeSelectorValue].length);
   randomItem = wordsByLength[inputNumLetters.value][typeSelectorValue][+randomIndex];
   creatingInputs(randomItem);
-  console.log(randomItem)
 });
 
 document.querySelector(".check").addEventListener("click", function () {
