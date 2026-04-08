@@ -134,6 +134,8 @@ function creatingInputs(randomItem) {
 
   document.querySelector(`.inputs-row-${trysCounter}
 	input:nth-child(1)`).focus();
+
+	numberHins(randomItem)
 }
 
 function valuesInputsAndCheck(gameWord) {
@@ -166,6 +168,17 @@ function valuesInputsAndCheck(gameWord) {
   trysCounter += 1;
 }
 
+function numberHin(gameWord){
+	if(gameWord.length >= 6 && gameWord.length < 10 ){
+	 numberHints=2
+	}else if(gameWord.length == 10){
+		numberHints=3
+	}
+	else{
+	 numberHints=1
+	}
+	document.querySelector(".hints").textContent=`${numberHints} hints`;
+}
 
 function creatingMessage(element, pColor, text) {
   element.style.position = 'fixed';
