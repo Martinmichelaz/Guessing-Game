@@ -138,7 +138,7 @@ button:hover:not(:disabled) {
   transform: translateY(-2px);
   opacity: 0.9;
 }
-button:disabled {
+button:disabled,select:disabled {
   opacity: 0.4;
   cursor: not-allowed;
 }
