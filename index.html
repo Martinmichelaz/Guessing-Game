@@ -4,43 +4,68 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title></title>
 	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-	
 	<header>
 		<h1></h1>
 	</header>
 	
 	<main>
 		<div class="num-letters">
-			<label>number of letters</label>
-			<select>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-				<option value="9">9</option>
-				<option value="10">10</option>
-			</select>
+			<div>
+				<label for="type">type of word</label>
+				<select id="type">
+					<option value="animals">animals</option>
+					<option value="nature">nature</option>
+					<option value="verbs">verbs</option>
+					<option value="objects">objects</option>
+					<option value="food">food</option>
+					<option value="colors">colors</option>
+					<option value="jobs">jobs</option>
+					<option value="tech">tech</option>
+					<option value="clothes">clothes</option>
+					<option value="emotions">emotions</option>
+					<option value="body">body</option>
+					<option value="transport">transport</option>
+					<option value="places">places</option>
+					<option value="tools">tools</option>
+					<option value="games">games</option>
+				</select>
+			</div>
+			<span>
+				<label for="numbers">number of letters</label>
+				<select id="numbers">
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select>
+			</span>
+			
 			<div class="score">
 				<p></p>
 			</div>
 		</div>
-		
 		<div class="container">
 			<div class="trys">
 				<h2>trys</h2>
 				<div class="trys-inputs">
 					<div class="for-buttons">
-						<button class="check">check word</button>
-						<button class="hints">hints</button>
+						<div class="container2">
+							<button class="red check">check word </button>
+							<button class="green hints"> hints</button>
+						</div>
 					</div>
 				</div>
+				
 			</div>
 			
 			<div class="keys-colors">
@@ -53,24 +78,21 @@
 				</div>
 				<div>
 					<div class="green"></div>
-					<p>correct</p>
+					<p>the letter is true</p>
 				</div>
 				<div>
 					<div class="red"></div>
-					<p>wrong</p>
+					<p>the letter is wrong</p>
 				</div>
+				
 			</div>
-			
 			<div class="message"></div>
 		</div>
 	</main>
-	
 	<footer>
 		<p></p>
 	</footer>
-	
 	<script src="script.js"></script>
-	
 </body>
 
 </html>
