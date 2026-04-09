@@ -425,7 +425,6 @@ function creatingInputs(randomItem) {
 	input:nth-child(1)`).focus();
 
 }
-numberHintsFunction(randomItem);
 function valuesInputsAndCheck(gameWord) {
   inputLinkedWord = [];
   const allInputsValue = document.querySelectorAll(`.inputs-row-${trysCounter} input`);
@@ -606,6 +605,7 @@ inputNumLetters.addEventListener("input", function () {
   *wordsByLength[inputNumLetters.value][typeSelectorValue].length);
   randomItem = wordsByLength[inputNumLetters.value][typeSelectorValue][+randomIndex];
   creatingInputs(randomItem);
+  numberHintsFunction(randomItem);
 });
 
 document.querySelector(".check").addEventListener("click", function () {
